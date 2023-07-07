@@ -2,9 +2,9 @@ pipeline {
     agent any
     
     environment {
-        AZURE_RESOURCE_GROUP = 'azure-jenk_group'
-        AZURE_WEBAPP_NAME = 'azure-jenk'
-        AZURE_CREDENTIALS_ID = '1523195a-5e0d-4e7e-ba88-a168cdffd973'
+        AZURE_RESOURCE_GROUP = 'test'
+        AZURE_WEBAPP_NAME = 'jenkins-testing123'
+        AZURE_CREDENTIALS_ID = 'cf76e075-f034-4a27-98b8-2cbf70d11266'
     }
     
     stages {
