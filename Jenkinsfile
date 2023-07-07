@@ -14,7 +14,7 @@ pipeline {
                 checkout scm
                 
                 // Build the Java application using Maven
-                sh 'mvn clean package'
+                bat 'mvn clean package'
             }
         }
         
