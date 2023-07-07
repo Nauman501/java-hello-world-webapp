@@ -22,11 +22,11 @@ pipeline {
             steps {
                 // Authenticate with Azure using the Azure CLI plugin and the configured service principal credentials
                 withCredentials([azureServicePrincipal(credentialsId: "${AZURE_CREDENTIALS_ID}", variable: 'AZURE_CREDENTIALS')]) {
-                    sh 'az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET --tenant $AZURE_TENANT_ID'
+                    bat 'az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET --tenant $AZURE_TENANT_ID'
                 }
                 
                 // Deploy the application to Azure Web App using Azure CLI plugin
-                sh 'az webapp deploy --name "${AZURE_WEBAPP_NAME}" --resource-group "${AZURE_RESOURCE_GROUP}" --type war --src-path target/java-hello-world.war'
+                bat 'az webapp deploy --name "${AZURE_WEBAPP_NAME}" --resource-group "${AZURE_RESOURCE_GROUP}" --type war --src-path target/java-hello-world.war'
             }
         }
     }
